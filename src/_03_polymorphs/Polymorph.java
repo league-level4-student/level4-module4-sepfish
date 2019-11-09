@@ -52,4 +52,8 @@ public abstract class Polymorph {
     }
     
     public abstract void draw(Graphics g);
+    
+    public void showMessage() {
+    	
+    }
 }

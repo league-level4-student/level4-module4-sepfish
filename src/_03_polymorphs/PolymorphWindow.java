@@ -21,7 +21,6 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseList
 	private Timer timer;
 
 	public ArrayList<Polymorph> morphs;
-	public JOPMorph test;
 
 	public static void main(String[] args) {
 		new PolymorphWindow().buildWindow();
@@ -34,11 +33,10 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseList
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.pack();
 		window.setVisible(true);
+		window.addMouseListener(this);
 
 		timer = new Timer(1000 / 30, this);
 		timer.start();
-		
-		test = new JOPMorph(200, 400, 20, 20);
 
 		morphs = new ArrayList<Polymorph>();
 		morphs.add(new BluePolymorph(50, 50, 50, 50));
@@ -59,7 +57,6 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseList
 		for (Polymorph p : morphs) {
 			p.draw(g);
 		}
-		test.draw(g);
 	}
 
 	@Override
@@ -68,37 +65,41 @@ public class PolymorphWindow extends JPanel implements ActionListener, MouseList
 		for (Polymorph p : morphs) {
 			p.update();
 		}
-		test.update();
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println("hi");
+		int x = e.getX();
+		int y = e.getY();
+		if (x > 100 && x < 170 && y > 425 && y < 495) {
+			for (Polymorph p: morphs) {
+				p.showMessage();
+			}
+		}
 	}
 
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("hi");
+		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("hi");
+		
 	}
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("hi");
+		
 	}
 
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("hi");
+		
 	}
 
 }

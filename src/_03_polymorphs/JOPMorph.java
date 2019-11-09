@@ -4,9 +4,12 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JOptionPane;
 
 
-public class JOPMorph extends Polymorph {
+public class JOPMorph extends Polymorph{
 
 	JOPMorph(int x, int y, int width, int height) {
 		super(x, y, width, height);
@@ -24,5 +27,12 @@ public class JOPMorph extends Polymorph {
 		
 	}
 	
-
+	public void showMessage() {
+		JOptionPane.showMessageDialog(null, "you'll");
+		JOptionPane.showMessageDialog(null, "never");
+		JOptionPane.showMessageDialog(null, "see");
+		JOptionPane.showMessageDialog(null, "it");
+		JOptionPane.showMessageDialog(null, "COOOOMIIIIIIIIIIINGGGG!!");
+	}
+	
 }
