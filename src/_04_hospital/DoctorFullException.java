@@ -4,6 +4,6 @@ import javax.swing.JOptionPane;
 
 public class DoctorFullException extends Exception {
 	DoctorFullException() {
-		System.out.println("Doctor has too many patients :(");
+		System.out.println("\nDoctor has too many patients :(");
 	}
 }

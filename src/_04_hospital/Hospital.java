@@ -29,16 +29,15 @@ public class Hospital {
 		return doctors;
 	}
 
-	public void assignPatientsToDoctors() { //need to fix this >:( ----------------------------------------------------
-		for (int i = 0; i < doctors.size(); i++) {
-			for (int j = 0; j < patients.size(); j++) {
-				try {
-					doctors.get(i).assignPatient(patients.get(j));
-				} catch (DoctorFullException e) {
-					i++;
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+	public void assignPatientsToDoctors() { 
+		int doctorNumber = 0;
+		for (int i = 0; i < patients.size();) {
+			try {
+				System.out.println("\ndoctor number " + doctorNumber + " adding patient number " + i);
+				doctors.get(doctorNumber).assignPatient(patients.get(i));
+				i++;
+			} catch (DoctorFullException e) {
+				doctorNumber++;
 			}
 		}
 	}
