@@ -92,7 +92,7 @@ public class EncapsulateTheData {
 		assertEquals(0, getItemsReceived());
 		assertEquals(270.0f, getDegreesTurned());
 		assertEquals(" ", getNomenclature());
-		assertEquals(new Object(), getMemberObj()); //this is false because the objects are not exactly the same but it does make a new object
+		assertEquals(new Object().getClass(), getMemberObj().getClass()); //edited to include "getClass()" because the objects will never be exactly the same (they will both be new Objects)
 	}
 	
 	public static void main(String[] args) {
